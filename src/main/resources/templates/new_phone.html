@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Phone Management System</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="
+        sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+  <div class="container my-2">
+    <h1>Phone Management System</h1>
+    <hr>
+    <h2>Save Phone</h2>
+
+    <form action="#" th:action ="@{/savePhone}"th:object = "${phone}", method="POST">
+
+      <label>
+        <input type="text" th:field ="*{modelName}"
+               placeholder="Phone ModelName" class="form-control mb-4 col-4">
+      </label>
+
+      <input type="text" th:field = "*{modelNumber}"
+             placeholder="Phone ModelNumber" class="form-control mb-4 col-4">
+
+      <input type="text" th:field = "*{capacity}"
+             placeholder="Phone Capacity(hardrive)" class="form-control mb-4 col-4">
+
+      <input type="text" th:field = "*{ramSize}"
+             placeholder="Phone RamSize" class="form-control mb-4 col-4">
+
+      <input type="text" th:field = "*{price}"
+             placeholder="Phone Price" class="form-control mb-4 col-4">
+
+      <input type="text" th:field="*{description}"
+             placeholder="Phone Description" class="form-control mb-4 col-4">
+
+      <button type="submit" class="btn btn-info col-2"> Save Phone</button>
+
+    </form>
+    <hr>
+    <a th:href="@{/}">Back to Phone List</a>
+  </div>
+
+</body>
+</html>
